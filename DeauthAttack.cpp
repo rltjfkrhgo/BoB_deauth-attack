@@ -5,9 +5,7 @@
 void InitDeauthPacket(DeauthPacket* packet)
 {
     memset(packet, 0x00, sizeof(DeauthPacket));
-    packet->radiotab[2] = 0x0b;
-    packet->radiotab[5] = 0x80;
-    packet->radiotab[6] = 0x02;
+    packet->radiotab[2] = 0x08;  // radiotap length
     packet->type = DeauthPacket::TYPE;
     packet->management[0] = 0x07;
 }

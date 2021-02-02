@@ -5,12 +5,11 @@
 
 #include "mac.h"
 
-typedef struct Mac Mac;
-
 struct deauth_packet
 {
     static const uint8_t  TYPE = 0xc0;
-    uint8_t  radiotab[11];
+
+    uint8_t  radiotab[8];
     uint8_t  type;
     uint8_t  flags;
     uint8_t  duration[2];
@@ -21,7 +20,8 @@ struct deauth_packet
     uint8_t  management[2];
 } __attribute__((__packed__));
 
-typedef deauth_packet DeauthPacket;
+typedef struct deauth_packet DeauthPacket;
+typedef struct Mac Mac;
 
 void InitDeauthPacket(DeauthPacket* packet);
 void InitDeauthApBroadcast(DeauthPacket* packet, Mac& apMac);

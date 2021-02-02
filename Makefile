@@ -1,7 +1,7 @@
 CC=g++
 CFLAGS=-c
 LDFLAGS=-lpcap
-SOURCES=DeauthAttackMain.cpp mac.cpp
+SOURCES=mac.cpp DeauthAttack.cpp DeauthAttackMain.cpp 
 OBJECTS=$(SOURCES:.cpp=.o)
 EXECUTABLE=deauth-attack
 

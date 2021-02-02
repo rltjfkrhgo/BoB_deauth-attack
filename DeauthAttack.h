@@ -9,7 +9,16 @@ typedef struct Mac Mac;
 
 struct deauth_packet
 {
-    uint8_t data[37];
+    static const uint8_t  TYPE = 0xc0;
+    uint8_t  radiotab[11];
+    uint8_t  type;
+    uint8_t  flags;
+    uint8_t  duration[2];
+    uint8_t  receiver[6];
+    uint8_t  transmitter[6];
+    uint8_t  bssid[6];
+    uint8_t  sequence[2];
+    uint8_t  management[2];
 } __attribute__((__packed__));
 
 typedef deauth_packet DeauthPacket;

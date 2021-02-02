@@ -2,6 +2,7 @@
 
 #include <cstdio>
 #include <pcap.h>
+#include "DeauthAttack.h"
 
 void usage() {
     printf("syntax: deauth-attack <interface> <ap mac> [<station mac>]\n");
